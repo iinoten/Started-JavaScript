@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="days">kontya</div>
+
+    <script type="text/javascript">
+        var now = new Date;
+        var date = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日";
+        document.write("<h1>", date, "</h1>");
+
+        function days_left() {  //一年の残り日数を求める関数
+
+            in_Func_now = new Date;
+
+            var gantan, days, diff;
+            gantan = new Date(in_Func_now.getFullYear() + 1, 0, 1); //来年の元旦の日時を求める
+            diff = gantan.getTime() - in_Func_now.getTime();    //getTimeメソッド同士を減算させることで1つめから2つめまでの時間をミリ秒で返させることができる
+            days = Math.ceil(diff / 1000 );    //Math.ceilで小数点以下を切り捨てる。ミリ秒を日数に変換
+            var seconds = "今年の残り秒数:" + days + "秒";
+            var elem = document.getElementById("days");
+            elem.innerHTML = seconds;
+            console.log(gantan,days,diff);
+        }
+
+        setInterval("days_left()",1000);    //残り秒数をリアルタイムで表示させるようにした
+    </script>
+</body>
+</html>

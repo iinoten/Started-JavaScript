@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <SCRIPT type="text/javascript">
+            myWeek=new Array("日","月","火","水","木","金","土");
+           function myFunc(){
+             myDate=new Date();
+             myMsg = myDate.getFullYear() + "年";
+             myMsg += ( myDate.getMonth() + 1 ) + "月";
+             myMsg += myDate.getDate() + "日";
+             myMsg += "(" + myWeek[myDate.getDay()] +  "曜日)";
+             myMsg += myDate.getHours() + "時";
+             myMsg += myDate.getMinutes() + "分";
+             myMsg += myDate.getSeconds() + "秒";
+             document.getElementById("myIDdate").innerHTML = myMsg;
+           }
+        </SCRIPT>
+           <DIV id="myIDdate">こんにちは</DIV>
+           <SCRIPT type="text/javascript">
+             setInterval( "myFunc()", 1000 );
+            </SCRIPT>
+           
+</body>
+</html>
