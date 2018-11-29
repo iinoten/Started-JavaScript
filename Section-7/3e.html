@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var age = [4, 6, 8, 10, 20, 60];
+        //joinメソッドで間に引数の文字を挿入して出力する(何も引数を指定しない場合","が挿入される)
+        document.write(age.join(">")); //"4>6>8>10>20>60"
+
+        function compare(a, b) {
+            return a - b;
+        }
+
+        var ages = age.sort(compare);
+        document.write(ages.join("="));
+    </script>
+</body>
+</html>
