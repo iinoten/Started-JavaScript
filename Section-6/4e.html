@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1 = "JavaScript入門";
+        document.write("<h1>",str1,"</h1>");
+        document.write("<h1>長さ:",str1.length,"</h1>");
+
+        for(var i = 0; i <= (str1.length-1); i++) {
+            document.write("<h2>",str1.charAt(i),"</h2>");  //charAtメソッドは文字列から1文字ずつ取り出す(0から数える)
+        }
+    </script>
+</body>
+</html>
