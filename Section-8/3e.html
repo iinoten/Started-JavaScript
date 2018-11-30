@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function stdWeight(myForm) {
+            var height, weight;
+            height = Number(myForm.height.value);
+            if(myForm.sex[0].checked) {
+                weight = (height - 80) * 0.7;
+            } else {
+                weight = (height - 70) * 0.6;
+            }
+            myForm.weight.value = weight;
+        }
+    </script>
+</head>
+<body>
+    <form name="weightForm"><p>
+        男性：<input type="radio" name="sex" checked>
+        女性：<input type="radio" name="sex"><br>
+        身長：<input type="text" name="height">cm<br>
+        <input type="button" value="計算" name="calc" onclick="stdWeight(this.form)"><br>
+        標準体重：<input type="text" name="weight">kg
+    </p></form>
+</body>
+</html>

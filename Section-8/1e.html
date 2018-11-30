@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var platform = navigator.platform;
+        if(platform.indexOf("Mac") >= 0) {
+            document.write("<h1>Hi Mac user</h1>");
+        } else if(platform.indexOf("Win") >= 0) {
+            document.write("<h1>Hi Windows user</h1>");
+        } else {
+            document.write("<h1>Hi other user</h1>");
+        }
+    </script>
+</body>
+</html>

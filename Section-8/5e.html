@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var hourBox, minBox, secBox;
+        var timer;
+
+        window.onload = init;
+
+        function init() {
+            hourBox = document.clockForm.hour;
+            minBox = document.clockForm.minute;
+            secBox = document.clockForm.sec;
+            dClock();
+        }
+
+        function dClock() {
+            var now = new Date();
+            var hour = now.getHours();
+            var min = now.getMinutes();
+            var sec = now.getSeconds();
+
+            if (hour < 10) {hour = "0" + hour}
+            if (min < 10) {min = "0" + min}
+            if (sec < 10) {sec = "0" + sec}
+            hourBox.value = hour;
+            minBox.value = min;
+            secBox.value = sec;
+
+            timer = setTimeout("dClock()", 1000);
+        }
+    </script>
+</head>
+<body>
+    <form name="clockForm"><p>
+        <input type="text" name="hour">時
+        <input type="text" name="minute">分
+        <input type="text" name="sec">秒
+    </p></form>
+</body>
+</html>
