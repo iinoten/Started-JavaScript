@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Person(name, height) {
+            this.name = name;
+            this.height = height;
+        }
+
+        function calcWeight() {
+            var weight;
+            weight = (this.height - 100) * 0.9;
+            return weight;
+        }
+        Person.prototype.stdWeight = calcWeight;
+    </script>
+</head>
+<body>
+    <script>
+        var friends = new Array(3);
+        friends[0] = new Person("John", 160);
+        friends[1] = new Person("Scar", 100);
+        friends[2] = new Person("Keny", 200);
+
+        for (var i=0; i<=friends.length-1; i++) {
+            document.write("<p>",friends.name,": ",friends[i].height,"cm ->",friends[i].stdWeight(),"kg</p>")
+        }
+    </script>
+</body>
+</html>
