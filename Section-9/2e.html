@@ -16,7 +16,8 @@
             weight = (this.height - 100) * 0.9;
             return weight;
         }
-        Person.prototype.stdWeight = calcWeight;
+        //これで、PersonインスタンスにcalcWeightメソッドを実行するstdWeightメソッドが実装される
+        Person.prototype.stdWeight = calcWeight;    //メソッドをオブジェクトに追加する方法
     </script>
 </head>
 <body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #myArea {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        var kuji = new Array(4);
+        kuji[0] = "大吉";
+        kuji[1] = "中吉";
+        kuji[2] = "吉";
+        kuji[3] = "凶";
+
+        function unsei() {
+            var myArea = document.getElementById("myArea");
+            var num = Math.floor(kuji.length * Math.random());
+            myArea.innerHTML = kuji[num];
+        }
+    </script>
+</head>
+<body>
+    <h1>今日の運勢</h1>
+    <form><p>
+        <input type="button" value="占う" name="calc" onclick="unsei();">
+    </p></form>
+    <div id="myArea">
+        <h3>今日の運勢は？</h3>
+    </div>
+</body>
+</html>
