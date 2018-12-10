@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data;
+        var xhr = new XMLHttpRequest(); //サーバーと非同期で通信するためのAPIからインスタンスを生成
+        xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=1850147&units=metric&appid=365b0a0ed2c86f45f8da4c351b2430db'); //渡す引数は２つ"どんな方法で開くか、どこのサーバを開くか"
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4) {  //｢もしデータを取得して通信が完了しているなら」番号で状態が変わる(５種類)
+                console.log( JSON.parse(xhr.responseText) );
+                data = JSON.parse(xhr.responseText);
+            }
+        }
+        console.log(xhr);
+    </script>
+    
+</body>
+</html>

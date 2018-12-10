@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> <!--jqueryライブラリの読み込み-->
+    <script>
+            $(function() {
+                $('#button').click(
+                    function() {
+                        $.ajax({
+                            url: 'https://rss.itunes.apple.com/api/v1/jp/ios-apps/top-free/games/10/explicit.json',
+                            dataType: 'json',
+                            success: function(data) {
+                                $('#text').html(data);
+                            },
+                            error: function(data) {
+                                alert("error");
+                            }
+                        });
+                    }
+                );
+            });
+        </script>
+</head>
+<body>
+    <input type="button" id="button" value="button" />
+    <br />
+    <div id="text"></div>
+</body>
+</html>
